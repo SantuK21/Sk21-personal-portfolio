@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Santosh Karajagi — HealthTech Engineer</title>
+  <meta name="description" content="Full-stack HealthTech engineer in Bengaluru. Tele ICU, teleradiology, appointment flows, home healthcare." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="#top">SK</a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <nav id="site-nav">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Software Engineer · Bengaluru</p>
+        <h1>Live systems<br />for hospitals.</h1>
+        <p class="lede">
+          I ship Tele ICU, teleradiology, appointment consults, and home healthcare
+          that clinicians actually use — Vue.js, Node.js, MQTT, HL7, DICOM.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#work">See work</a>
+          <a class="btn ghost" id="email-btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=santoshkarajagi21@gmail.com&amp;su=Hello%20Santosh" target="_blank" rel="noopener">Email me</a>
+          <a class="btn ghost" id="call-btn" href="tel:+919901321245">Call</a>
+        </div>
+        <div class="hero-meta">
+          <span>Teslon Technologies</span>
+          <span>3 years production</span>
+          <span>HealthTech</span>
+        </div>
+      </div>
+
+      <aside class="monitor-card monitor-ecg">
+        <div class="monitor-head">
+          <span>LEAD II</span>
+          <span>72 bpm · 25 mm/s</span>
+        </div>
+        <canvas id="wave-ecg" class="wave" width="640" height="180" aria-hidden="true"></canvas>
+        <div class="monitor-vitals">
+          <div><em>HR</em><strong>72</strong></div>
+          <div><em>SpO2</em><strong>98</strong></div>
+          <div><em>RR</em><strong>16</strong></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="work" class="section">
+      <div class="section-head">
+        <h2>Selected work</h2>
+        <p>Click a product. Filter with skills. Built in production CarePortal / RPM.</p>
+      </div>
+
+      <div class="work-filters" id="work-filters" aria-label="Filter work by skill">
+        <button type="button" class="chip is-on" data-filter="all">All</button>
+        <button type="button" class="chip" data-filter="vue">Vue.js</button>
+        <button type="button" class="chip" data-filter="mqtt">MQTT</button>
+        <button type="button" class="chip" data-filter="hl7">HL7</button>
+        <button type="button" class="chip" data-filter="dicom">DICOM</button>
+        <button type="button" class="chip" data-filter="webrtc">WebRTC</button>
+        <button type="button" class="chip" data-filter="node">Node.js</button>
+      </div>
+
+      <div class="project-grid" id="project-grid">
+        <button type="button" class="project-card" data-project="tele-icu" data-skills="vue,mqtt,hl7,node">
+          <span class="project-kicker">01 · Live monitoring</span>
+          <h3>Tele ICU</h3>
+          <p>Ward cards and bed monitors with live ECG, vitals, and MQTT from the bedside.</p>
+          <span class="project-open">View details →</span>
+        </button>
+        <button type="button" class="project-card" data-project="tele-radiology" data-skills="dicom,vue,node">
+          <span class="project-kicker">02 · Imaging</span>
+          <h3>Tele Radiology</h3>
+          <p>DICOM viewer, study lists, and teleradiology order + report flow for remote reads.</p>
+          <span class="project-open">View details →</span>
+        </button>
+        <button type="button" class="project-card" data-project="appointments" data-skills="vue,webrtc,node">
+          <span class="project-kicker">03 · Care delivery</span>
+          <h3>Appointment flows</h3>
+          <p>Booking, payments, and WebRTC consults with chat, prescriptions, and vitals.</p>
+          <span class="project-open">View details →</span>
+        </button>
+        <button type="button" class="project-card" data-project="hhc" data-skills="vue,node">
+          <span class="project-kicker">04 · Field care</span>
+          <h3>Home healthcare</h3>
+          <p>Nurse visit calendar, day timeline, and subscription / payment settings for HHC.</p>
+          <span class="project-open">View details →</span>
+        </button>
+      </div>
+
+      <article class="job">
+        <div class="job-side">
+          <p class="job-dates">May 2023 — May 2024</p>
+          <p class="job-place">Bengaluru · Freelance</p>
+        </div>
+        <div class="job-body">
+          <h3>Associate Software Developer</h3>
+          <p class="job-org">Nirosol Solutions</p>
+          <p class="job-desc">Desktop and POS UI: screens, flows, and checkout that staff actually use.</p>
+          <div class="tags">
+            <span>WPF</span><span>Android XML</span><span>UI</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="monitor-card monitor-spo2">
+        <div class="monitor-head">
+          <span>SpO2 · PLETH</span>
+          <span>98% · PI 2.1</span>
+        </div>
+        <canvas id="wave-spo2" class="wave" width="960" height="120" aria-hidden="true"></canvas>
+      </div>
+      <div class="section-head">
+        <h2>Skills</h2>
+        <p>Tap a card to filter matching work.</p>
+      </div>
+      <div class="skill-grid" id="skill-grid">
+        <button type="button" class="skill-card" data-jump="vue">
+          <h4>Frontend</h4>
+          <p>Vue.js, Angular, WPF, Android XML</p>
+        </button>
+        <button type="button" class="skill-card" data-jump="node">
+          <h4>Backend</h4>
+          <p>Node.js, Express.js, REST APIs, MQTT</p>
+        </button>
+        <button type="button" class="skill-card" data-jump="hl7">
+          <h4>Healthcare</h4>
+          <p>HL7 FHIR, HL7 v2, DICOM, PACS, WebRTC</p>
+        </button>
+        <button type="button" class="skill-card" data-jump="mqtt">
+          <h4>Realtime data</h4>
+          <p>MongoDB, Redis, SQL, PostgreSQL, MQTT</p>
+        </button>
+        <button type="button" class="skill-card" data-jump="dicom">
+          <h4>Languages</h4>
+          <p>JavaScript (ES6+), JSON, HTML, CSS</p>
+        </button>
+        <button type="button" class="skill-card" data-jump="webrtc">
+          <h4>Environment</h4>
+          <p>Linux · Git · Postman · Cursor</p>
+        </button>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="section-head">
+        <h2>About</h2>
+      </div>
+      <div class="about-grid">
+        <p>
+          I care about systems that stay up when a patient is on the bed:
+          streams that don’t drop, bookings that don’t charge twice, viewers that
+          open a study when a radiologist is waiting.
+        </p>
+        <div class="edu">
+          <h4>Education</h4>
+          <p class="edu-title">B.E. Computer Science &amp; Engineering</p>
+          <p>Nitte Meenakshi Institute of Technology, Bengaluru</p>
+          <p class="muted">2022</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="monitor-card monitor-resp">
+        <div class="monitor-head">
+          <span>RESP</span>
+          <span>16 /min</span>
+        </div>
+        <canvas id="wave-resp" class="wave" width="960" height="120" aria-hidden="true"></canvas>
+      </div>
+      <h2>Let’s work.</h2>
+      <p>Email opens Gmail. Call opens the phone dialer. WhatsApp if that’s easier.</p>
+      <div class="contact-links">
+        <a id="email-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=santoshkarajagi21@gmail.com&amp;su=Hello%20Santosh" target="_blank" rel="noopener">santoshkarajagi21@gmail.com</a>
+        <a id="call-link" href="tel:+919901321245">+91 99013 21245</a>
+        <a href="https://wa.me/919901321245" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://linkedin.com/in/santosh-karajagi" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/SantuK21" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Santosh Karajagi</span>
+    <span>Bengaluru</span>
+  </footer>
+
+  <div class="drawer" id="drawer" hidden>
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+      <button class="drawer-close" type="button">Close</button>
+      <p class="project-kicker" id="drawer-kicker"></p>
+      <h2 id="drawer-title"></h2>
+      <p class="drawer-lede" id="drawer-lede"></p>
+      <ul id="drawer-list"></ul>
+      <div class="tags" id="drawer-tags"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
