@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="styles.css?v=5" />
 </head>
 <body>
   <header class="nav">
@@ -26,6 +26,20 @@
 
   <main id="top">
     <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="trace trace-ecg">
+          <canvas id="wave-ecg" class="wave"></canvas>
+          <div class="trace-meta"><span>II</span><strong>72</strong></div>
+        </div>
+        <div class="trace trace-spo2">
+          <canvas id="wave-spo2" class="wave"></canvas>
+          <div class="trace-meta"><span>SpO2</span><strong>98</strong></div>
+        </div>
+        <div class="trace trace-resp">
+          <canvas id="wave-resp" class="wave"></canvas>
+          <div class="trace-meta"><span>RESP</span><strong>16</strong></div>
+        </div>
+      </div>
       <div class="hero-copy">
         <p class="eyebrow">Software Engineer · Bengaluru</p>
         <h1>Live systems<br />for hospitals.</h1>
@@ -45,19 +59,6 @@
           <span>HealthTech</span>
         </div>
       </div>
-
-      <aside class="monitor-card monitor-ecg">
-        <div class="monitor-head">
-          <span>LEAD II</span>
-          <span>72 bpm · 25 mm/s</span>
-        </div>
-        <canvas id="wave-ecg" class="wave" width="640" height="180" aria-hidden="true"></canvas>
-        <div class="monitor-vitals">
-          <div><em>HR</em><strong>72</strong></div>
-          <div><em>SpO2</em><strong>98</strong></div>
-          <div><em>RR</em><strong>16</strong></div>
-        </div>
-      </aside>
     </section>
 
     <section id="work" class="section">
@@ -123,13 +124,6 @@
     </section>
 
     <section id="skills" class="section">
-      <div class="monitor-card monitor-spo2">
-        <div class="monitor-head">
-          <span>SpO2 · PLETH</span>
-          <span>98% · PI 2.1</span>
-        </div>
-        <canvas id="wave-spo2" class="wave" width="960" height="120" aria-hidden="true"></canvas>
-      </div>
       <div class="section-head">
         <h2>Skills</h2>
         <p>Tap a card to filter matching work.</p>
@@ -182,13 +176,6 @@
     </section>
 
     <section id="contact" class="section contact">
-      <div class="monitor-card monitor-resp">
-        <div class="monitor-head">
-          <span>RESP</span>
-          <span>16 /min</span>
-        </div>
-        <canvas id="wave-resp" class="wave" width="960" height="120" aria-hidden="true"></canvas>
-      </div>
       <h2>Let’s work.</h2>
       <p>Email opens Gmail. Call opens the phone dialer. WhatsApp if that’s easier.</p>
       <div class="contact-links">
@@ -218,6 +205,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>

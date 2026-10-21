@@ -113,17 +113,17 @@
 
   function pleth(p) {
     const c = ((p % 1) + 1) % 1;
-    const pulse = Math.pow(Math.max(0, Math.sin(c * Math.PI)), 1.35) * 34;
-    const notch = c > 0.42 && c < 0.58 ? Math.sin((c - 0.42) / 0.16 * Math.PI) * 7 : 0;
-    return pulse - notch - 8;
+    const pulse = Math.pow(Math.max(0, Math.sin(c * Math.PI)), 1.35) * 22;
+    const notch = c > 0.42 && c < 0.58 ? Math.sin((c - 0.42) / 0.16 * Math.PI) * 5 : 0;
+    return pulse - notch - 6;
   }
 
   function resp(p) {
     const c = ((p % 1) + 1) % 1;
-    const inhale = Math.pow(Math.sin(Math.min(1, c / 0.42) * Math.PI * 0.5), 1.1) * 26;
-    const hold = c > 0.42 && c < 0.52 ? 26 : 0;
-    const exhale = c >= 0.52 ? Math.pow(Math.cos(((c - 0.52) / 0.48) * Math.PI * 0.5), 1.2) * 26 : 0;
-    return (c < 0.42 ? inhale : (c < 0.52 ? hold : exhale)) - 8;
+    const inhale = Math.pow(Math.sin(Math.min(1, c / 0.42) * Math.PI * 0.5), 1.1) * 16;
+    const hold = c > 0.42 && c < 0.52 ? 16 : 0;
+    const exhale = c >= 0.52 ? Math.pow(Math.cos(((c - 0.52) / 0.48) * Math.PI * 0.5), 1.2) * 16 : 0;
+    return (c < 0.42 ? inhale : (c < 0.52 ? hold : exhale)) - 6;
   }
 
   function mountWave(id, kind, color) {
@@ -132,6 +132,8 @@
     const ctx = canvas.getContext("2d");
     let t = 0;
     const seconds = kind === "resp" ? 12 : (kind === "pleth" ? 3.2 : 4.8);
+    const glow = kind === "pleth" ? "rgba(62,207,255,0.16)" : (kind === "resp" ? "rgba(245,197,66,0.16)" : "rgba(45,252,136,0.16)");
+    const sweep = kind === "pleth" ? "rgba(62,207,255,0.28)" : (kind === "resp" ? "rgba(245,197,66,0.28)" : "rgba(45,252,136,0.28)");
 
     function size() {
       const rect = canvas.getBoundingClientRect();
@@ -151,9 +153,9 @@
       const w = canvas.clientWidth;
       const h = canvas.clientHeight;
       ctx.clearRect(0, 0, w, h);
-      const mid = h * 0.58;
-      ctx.strokeStyle = color.replace(")", ",0.16)").replace("rgb", "rgba").replace("#", "");
-      ctx.strokeStyle = kind === "pleth" ? "rgba(62,207,255,0.16)" : (kind === "resp" ? "rgba(245,197,66,0.16)" : "rgba(45,252,136,0.16)");
+      const mid = h * 0.55;
+      const amp = h / 110;
+      ctx.strokeStyle = glow;
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.moveTo(0, mid);
@@ -161,25 +163,25 @@
       ctx.stroke();
 
       ctx.beginPath();
-      ctx.lineWidth = 1.8;
+      ctx.lineWidth = kind === "ecg" ? 2.1 : 1.8;
       ctx.strokeStyle = color;
       ctx.lineJoin = "round";
       ctx.lineCap = "round";
-      const cycles = kind === "resp" ? 2.2 : (kind === "pleth" ? 3.4 : 4);
-      for (let x = 0; x <= w; x += 1.5) {
+      const cycles = kind === "resp" ? 2.2 : (kind === "pleth" ? 3.4 : 5);
+      for (let x = 0; x <= w; x += 2) {
         const frac = (x / w) * cycles + t;
-        const y = mid - sample(frac);
+        const y = mid - sample(frac) * amp;
         if (x === 0) ctx.moveTo(x, y);
         else ctx.lineTo(x, y);
       }
       ctx.stroke();
 
       const head = ((t / seconds) % 1) * w;
-      const g = ctx.createLinearGradient(head - 22, 0, head + 4, 0);
+      const g = ctx.createLinearGradient(head - 36, 0, head + 8, 0);
       g.addColorStop(0, "rgba(255,255,255,0)");
-      g.addColorStop(1, color === "#3ecfff" ? "rgba(62,207,255,0.28)" : (color === "#f5c542" ? "rgba(245,197,66,0.28)" : "rgba(45,252,136,0.28)"));
+      g.addColorStop(1, sweep);
       ctx.fillStyle = g;
-      ctx.fillRect(Math.max(0, head - 22), 0, 26, h);
+      ctx.fillRect(Math.max(0, head - 36), 0, 44, h);
 
       t += kind === "resp" ? 0.0048 : (kind === "pleth" ? 0.012 : 0.0085);
       requestAnimationFrame(draw);
