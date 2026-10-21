@@ -285,8 +285,14 @@ h1 {
 .job-grid,
 .project-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 16px;
+  width: 100%;
+}
+
+.job-card {
+  width: 100%;
+  min-width: 0;
 }
 
 .work-label {
@@ -481,7 +487,7 @@ footer {
 .drawer-panel li { margin-bottom: 10px; line-height: 1.5; }
 
 @media (max-width: 900px) {
-  .hero, .about-grid, .project-grid, .job-grid, .skill-grid { grid-template-columns: 1fr; }
+  .hero, .about-grid, .project-grid, .skill-grid { grid-template-columns: 1fr; }
   .nav-toggle { display: block; }
   nav {
     display: none;
@@ -496,4 +502,8 @@ footer {
     padding: 8px;
   }
   body.nav-open nav { display: flex; }
+}
+
+@media (max-width: 640px) {
+  .job-grid { grid-template-columns: 1fr; }
 }
