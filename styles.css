@@ -421,8 +421,13 @@ h1 {
   margin-bottom: 10px;
   font-family: var(--mono);
 }
-.edu-title { font-weight: 600; margin-bottom: 6px; }
+.edu-title { font-weight: 600; margin-bottom: 6px; color: var(--ink); }
 .edu p { color: var(--muted); }
+.edu-item + .edu-item {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
 
 .contact { padding-bottom: 10vh; }
 .contact h2 { margin-top: 22px; }
