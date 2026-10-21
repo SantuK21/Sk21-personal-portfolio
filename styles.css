@@ -282,10 +282,20 @@ h1 {
   border-color: var(--spo2);
 }
 
+.job-grid,
 .project-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+}
+
+.work-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 28px 0 12px;
 }
 
 .project-card,
@@ -471,7 +481,7 @@ footer {
 .drawer-panel li { margin-bottom: 10px; line-height: 1.5; }
 
 @media (max-width: 900px) {
-  .hero, .about-grid, .project-grid, .skill-grid, .job { grid-template-columns: 1fr; }
+  .hero, .about-grid, .project-grid, .job-grid, .skill-grid { grid-template-columns: 1fr; }
   .nav-toggle { display: block; }
   nav {
     display: none;

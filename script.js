@@ -5,6 +5,30 @@
   const MAILTO = "mailto:" + EMAIL + "?subject=" + encodeURIComponent("Hello Santosh");
 
   const PROJECTS = {
+    teslon: {
+      kicker: "Jun 2024 — Present · 2.6 years",
+      title: "Teslon Technologies",
+      lede: "Software Engineer I in Bengaluru. Production HealthTech on CarePortal / RPM.",
+      points: [
+        "Tele ICU: live ECG/MQTT ward cards and bed monitors, HL7 v2 / FHIR, BP device errors, paper-style traces.",
+        "Tele Radiology: DICOM viewer, study lists, teleradiology orders and reports.",
+        "Appointment flows: booking, payments, WebRTC consults with chat, prescriptions, and vitals.",
+        "Home healthcare: nurse visit calendar, day timeline, and HHC payment settings.",
+        "Redis locking and idempotent REST APIs so bookings and payments are not charged twice."
+      ],
+      tags: ["Vue.js", "Node.js", "MQTT", "HL7", "DICOM", "WebRTC"]
+    },
+    nirosol: {
+      kicker: "May 2023 — May 2024 · Freelance",
+      title: "Nirosol Solutions",
+      lede: "Associate Software Developer. Desktop and POS UI that staff actually use.",
+      points: [
+        "WPF desktop UI: layout, styling, and navigation flow.",
+        "Android XML POS app: screens and frontend navigation.",
+        "UI and checkout / workflow fixes across desktop and Android POS."
+      ],
+      tags: ["WPF", "Android XML", "UI"]
+    },
     "tele-icu": {
       kicker: "01 · Live monitoring",
       title: "Tele ICU",
@@ -190,7 +214,7 @@
     document.querySelectorAll(".work-filters .chip").forEach(function (chip) {
       chip.classList.toggle("is-on", chip.getAttribute("data-filter") === key);
     });
-    document.querySelectorAll("#project-grid .project-card").forEach(function (card) {
+    document.querySelectorAll(".project-card[data-skills]").forEach(function (card) {
       const skills = (card.getAttribute("data-skills") || "").split(",");
       card.classList.toggle("is-hidden", !(key === "all" || skills.indexOf(key) !== -1));
     });
@@ -226,7 +250,7 @@
     drawer.hidden = false;
     document.body.style.overflow = "hidden";
   }
-  document.querySelectorAll("#project-grid .project-card").forEach(function (card) {
+  document.querySelectorAll(".project-card[data-project]").forEach(function (card) {
     card.addEventListener("click", function () {
       openProject(card.getAttribute("data-project"));
     });
