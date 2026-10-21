@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Santosh Karajagi Resume</title>
+  <style>
+    @page { size: A4; margin: 14mm 16mm; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Calibri", "Segoe UI", Helvetica, Arial, sans-serif;
+      color: #1a1a1a;
+      font-size: 10.5pt;
+      line-height: 1.35;
+    }
+    h1 { font-size: 22pt; letter-spacing: 0.02em; text-align: center; }
+    .role { text-align: center; color: #333; margin-top: 2px; font-size: 11pt; }
+    .links {
+      text-align: center;
+      margin-top: 8px;
+      font-size: 10pt;
+    }
+    .links a {
+      color: #0b57d0;
+      text-decoration: underline;
+    }
+    .sep { color: #888; margin: 0 7px; }
+    h2 {
+      font-size: 11pt;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-bottom: 1.2px solid #222;
+      margin: 14px 0 6px;
+      padding-bottom: 2px;
+    }
+    p { margin-bottom: 4px; }
+    .job { margin-bottom: 8px; }
+    .job-head { display: flex; justify-content: space-between; gap: 12px; font-weight: 700; }
+    .job-sub { display: flex; justify-content: space-between; color: #333; font-style: italic; margin: 1px 0 4px; }
+    ul { padding-left: 16px; }
+    li { margin-bottom: 3px; }
+    .skills b { font-weight: 700; }
+  </style>
+</head>
+<body>
+  <h1>Santosh Karajagi</h1>
+  <p class="role">Software Engineer | Full Stack | HealthTech</p>
+  <p class="links">
+    Bengaluru, India
+    <span class="sep">·</span>
+    <a href="tel:+919901321245">+91 99013 21245</a>
+    <span class="sep">·</span>
+    <a href="mailto:santoshkarajagi21@gmail.com">santoshkarajagi21@gmail.com</a>
+  </p>
+  <p class="links">
+    <a href="https://santuk21.github.io/Sk21-personal-portfolio/" target="_blank" rel="noopener">Portfolio</a>
+    <span class="sep">·</span>
+    <a href="https://www.linkedin.com/in/santosh-karajagi" target="_blank" rel="noopener">LinkedIn</a>
+    <span class="sep">·</span>
+    <a href="https://github.com/SantuK21" target="_blank" rel="noopener">GitHub</a>
+  </p>
+
+  <h2>Summary</h2>
+  <p>
+    Full-stack software engineer with production experience building healthcare applications: Node.js /
+    JavaScript backends, Angular and Vue.js UIs, REST APIs, MongoDB, Redis, MQTT telemetry, HL7 v2 /
+    FHIR interoperability, DICOM / PACS teleradiology, and WebRTC telemedicine. Open to software engineer,
+    backend, and HealthTech product roles.
+  </p>
+
+  <h2>Skills</h2>
+  <p class="skills"><b>Languages:</b> JavaScript (ES6+), JSON, HTML, CSS, regex</p>
+  <p class="skills"><b>Frontend:</b> Angular, Vue.js, WPF, Android XML</p>
+  <p class="skills"><b>Backend:</b> Node.js, Express.js, REST APIs, MQTT</p>
+  <p class="skills"><b>Databases:</b> MongoDB, Redis, SQL, PostgreSQL</p>
+  <p class="skills"><b>Healthcare:</b> HL7 FHIR, HL7 v2, DICOM, PACS, EHR / HIS, WebRTC, Redash</p>
+  <p class="skills"><b>OS / Tools:</b> Linux, Git, SourceTree, Postman, Cursor</p>
+
+  <h2>Experience</h2>
+  <div class="job">
+    <div class="job-head">
+      <span>Teslon Technologies Pvt Ltd</span>
+      <span>June 2024 – Present</span>
+    </div>
+    <div class="job-sub">
+      <span>Software Engineer I | Bengaluru</span>
+    </div>
+    <ul>
+      <li>Built real-time ICU telemetry pipelines: HL7 monitor and ventilator messages to JSON, streamed over MQTT into MongoDB.</li>
+      <li>Integrated HL7 v2 over TCP so live bedside vitals reach the hospital monitoring gateway.</li>
+      <li>Mapped clinical observations and patient demographics to HL7 FHIR for EHR / HIS interoperability.</li>
+      <li>Implemented WebRTC clinical video with picture-in-picture for remote specialists.</li>
+      <li>Used Redis locking and idempotent REST APIs on booking and payment flows to prevent double-booking and duplicate charges.</li>
+      <li>Delivered teleradiology / DICOM / PACS workflows (study dispatch, DICOM viewer, radiologist review, reports).</li>
+      <li>Built Redash dashboards and MongoDB aggregations for screening-camp operations.</li>
+    </ul>
+  </div>
+  <div class="job">
+    <div class="job-head">
+      <span>Nirosol Solutions Pvt Ltd (Freelance)</span>
+      <span>May 2023 – May 2024</span>
+    </div>
+    <div class="job-sub">
+      <span>Associate Software Developer | Bengaluru</span>
+    </div>
+    <ul>
+      <li>Built and fixed WPF desktop UI screens, including layout, styling, and navigation flow.</li>
+      <li>Worked on a POS application using Android XML layouts, repairing screens and frontend navigation.</li>
+      <li>Resolved UI bugs and checkout / workflow issues across WPF desktop and Android POS.</li>
+    </ul>
+  </div>
+
+  <h2>Education</h2>
+  <div class="job-head">
+    <span>Bachelor of Engineering, Computer Science &amp; Engineering</span>
+    <span>2022</span>
+  </div>
+  <p>Nitte Meenakshi Institute of Technology, Bengaluru</p>
+</body>
+</html>
